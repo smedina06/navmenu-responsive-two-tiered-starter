@@ -69,11 +69,35 @@ header a img {
     display: block;
 }
 
-
 .navmenu a:hover {
     background-color: black;
     color: red;
 }
+
+.submenu i {
+    transition: transform 400ms linear;
+}
+
+.submenu:hover i {
+    transform: rotate(-180deg);
+}
+
+.toggle-menu {
+   display: none;
+    z-index: 999;
+    background-color: transparent;
+    width: 25px;
+    aspect-ratio: 1;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    border: none;
+    background-image: url(../images/hamburger.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 
 section {
     padding: 2vh;
@@ -136,6 +160,39 @@ footer p {
         padding: 2vh;
         background-color: transparent;
     }
+
+    .navmenu {
+        display: none;
+        z-index: 99;
+        flex-direction: column;
+        justify-content: flex-start;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 80%;
+       background-image: conic-gradient(darkblue, blue, darkblue);
+       padding-top: 20vh;
+       transform: translateX(-100%);
+       transition: transform 200ms linear;
+    }
+
+    .toggle-menu {
+        display: block;
+    }
+
+    .toggle-menu[data-visible="true"] {
+        background-image: url(../images/closemobile.png);
+    }
+
+    .navmenu[data-visible="true"] {
+        transform: translateX(0%);
+    }
+
+    .navmenu.active {
+        display: block;
+    }
+
     .submenu-content a {
         padding-left: 5vh;
     }
