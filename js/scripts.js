@@ -12,7 +12,7 @@ function toggleMenu() {
     if(isVisble === "false") {
         if(navigationMenu.classList.contains("active")){
             navigationMenu.setAttribute("data-visible", "true");
-            navButton.setAttribute("data-visble", "true");
+            navButton.setAttribute("data-visible", "true");
         }
         else {
             dataDisplay();
